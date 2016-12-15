@@ -26,13 +26,13 @@ model {
         }
     }
     android {
-        compileSdkVersion 23
-        buildToolsVersion "23.0.3"
+        compileSdkVersion 25
+        buildToolsVersion "25.0.2"
 
         defaultConfig {
             applicationId "org.citraemu.citra"
-            minSdkVersion.apiLevel 23
-            targetSdkVersion.apiLevel 23
+            minSdkVersion.apiLevel 24
+            targetSdkVersion.apiLevel 25
             versionCode 1
             versionName "1.0"
         }
