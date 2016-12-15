@@ -81,10 +81,10 @@ model {
                 proguardFiles.add(file('proguard-rules-pro'))
             }
         }
+    }
 
-        lintOptions {
-            abortOnError false
-        }
+    android.lintOptions {
+        abortOnError false
     }
 }
 
