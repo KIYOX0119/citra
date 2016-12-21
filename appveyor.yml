@@ -30,6 +30,6 @@ build_script:
   - cd c:\projects\citra-android
   - gradlew dependencies
   - gradlew test
-  - gradlew build
+  - gradlew build --stacktrace
 
 test: off

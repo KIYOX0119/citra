@@ -22,4 +22,4 @@ script:
   - chmod +x ./gradlew
   - ./gradlew dependencies
   - ./gradlew test
-  - ./gradlew build
+  - ./gradlew build --stacktrace
