@@ -4,20 +4,15 @@ os:
 language: android
 
 env:
-  - ANDROID_HOME=/usr/local/opt/android-sdk ANDROID_NDK_HOME=/usr/local/Cellar/android-ndk/r11c
-
-before_install:
-  # Travis doesn't let us select the JDK version on OS X.  Force it ourselves.
-  - chmod +x ./ci/install-osx-jdk8.sh
-  - ./ci/install-osx-jdk8.sh
+  - ANDROID_HOME=/usr/local/opt/android-sdk ANDROID_NDK_HOME=/usr/local/Cellar/android-ndk/r13b
 
 install:
   - brew update > /dev/null # silence the very verbose output
   - brew install android-sdk android-ndk
   - echo y | android update sdk --no-ui --all --filter tools
   - echo y | android update sdk --no-ui --all --filter platform-tools
-  - echo y | android update sdk --no-ui --all --filter build-tools-23.0.3
-  - echo y | android update sdk --no-ui --all --filter android-23
+  - echo y | android update sdk --no-ui --all --filter build-tools-25.0.2
+  - echo y | android update sdk --no-ui --all --filter android-25
   - echo y | android update sdk --no-ui --all --filter extra-google-m2repository
   - echo y | android update sdk --no-ui --all --filter extra-google-google_play_services
   - echo y | android update sdk --no-ui --all --filter extra-android-support
@@ -27,4 +22,4 @@ script:
   - chmod +x ./gradlew
   - ./gradlew dependencies
   - ./gradlew test
-  - ./gradlew build
+  - ./gradlew build --stacktrace

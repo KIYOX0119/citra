@@ -26,13 +26,13 @@ model {
         }
     }
     android {
-        compileSdkVersion 23
-        buildToolsVersion "23.0.3"
+        compileSdkVersion 25
+        buildToolsVersion "25.0.2"
 
         defaultConfig {
             applicationId "org.citraemu.citra"
-            minSdkVersion.apiLevel 23
-            targetSdkVersion.apiLevel 23
+            minSdkVersion.apiLevel 24
+            targetSdkVersion.apiLevel 25
             versionCode 1
             versionName "1.0"
         }
@@ -82,13 +82,17 @@ model {
             }
         }
     }
+
+    android.lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.google.android.gms:play-services-ads:9.0.1'
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.google.android.gms:play-services-ads:10.0.1'
     compile 'com.github.bluejamesbond:textjustify-android:2.1.6'
 }
